@@ -1,0 +1,39 @@
+$first-color: rgb(152, 22, 181);
+$light-color: rgb(224, 213, 239);
+$contrast-color: rgb(245, 205, 29);
+$white: rgb(255, 255, 255);
+
+h2 {
+  background-color: $first-color;
+  color: $white;
+  padding: 1em;
+  margin: 0;
+  border-bottom: 10px solid $contrast-color;
+  border-right: 10px solid $contrast-color;
+}
+
+h3 {
+  color: $first-color;
+  text-shadow: 2px 3px 4px $contrast-color;
+}
+img {
+  width: 300px;
+  margin-top: 1em;
+}
+
+div {
+  background-color: $light-color;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: quicksand;
+}
+
+p {
+  background-color: $white;
+  border: 10px solid $light-color;
+  padding: 1em;
+  margin: 0;
+}
