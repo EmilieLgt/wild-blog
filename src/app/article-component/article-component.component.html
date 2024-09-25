@@ -1,7 +1,28 @@
-<div>
-  <h2>{{ title }}</h2>
-
-  <img [src]="image" alt="album cover" />
-  <h3>{{ description }}</h3>
-  <p>{{ content }}</p>
+<div class="whole-article">
+  <h2>
+    {{ article.title }}
+    <button (click)="togglePublication()">Show or Hide</button>
+  </h2>
+  <div *ngIf="article.isPublished">
+    <p class="author">by {{ article.author }}</p>
+    <div class="article-content">
+      <div>
+        <img [src]="article.image" alt="album cover" />
+      </div>
+      <div>
+        <h3>{{ article.description }}</h3>
+        <p>{{ article.content }}</p>
+      </div>
+    </div>
+    <div class="comment-section">
+      <h4>Share your thoughts !</h4>
+      <input
+        type="text"
+        [(ngModel)]="article.comment"
+        placeholder="Type your comment here !"
+      />
+      <h5>Comments</h5>
+      <p>{{ article.comment }}</p>
+    </div>
+  </div>
 </div>
