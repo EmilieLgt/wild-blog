@@ -1,28 +1,32 @@
-<div class="whole-article">
-  <h2>
-    {{ article.title }}
-    <button (click)="togglePublication()">Show or Hide</button>
-  </h2>
-  <div *ngIf="article.isPublished">
-    <p class="author">by {{ article.author }}</p>
-    <div class="article-content">
-      <div>
-        <img [src]="article.image" alt="album cover" />
+<div class="articles-container">
+  <div class="whole-article" *ngFor="let art of article; let index = index">
+    <h2>
+      {{ art.title }}
+      <button (click)="togglePublication(index)">
+        {{ art.isPublished ? "Hide" : "Show" }}
+      </button>
+    </h2>
+    <div class="article-details" [class.hidden]="!art.isPublished">
+      <p class="author">by {{ art.author }}</p>
+      <div class="article-content">
+        <div>
+          <img [src]="art.image" alt="album cover" />
+        </div>
+        <div>
+          <h3>{{ art.description }}</h3>
+          <p>{{ art.content }}</p>
+        </div>
       </div>
-      <div>
-        <h3>{{ article.description }}</h3>
-        <p>{{ article.content }}</p>
+      <div class="comment-section">
+        <h4>Share your thoughts !</h4>
+        <input
+          type="text"
+          [(ngModel)]="art.comment"
+          placeholder="Type your comment here !"
+        />
+        <h5>Comments</h5>
+        <p>{{ art.comment }}</p>
       </div>
-    </div>
-    <div class="comment-section">
-      <h4>Share your thoughts !</h4>
-      <input
-        type="text"
-        [(ngModel)]="article.comment"
-        placeholder="Type your comment here !"
-      />
-      <h5>Comments</h5>
-      <p>{{ article.comment }}</p>
     </div>
   </div>
 </div>
