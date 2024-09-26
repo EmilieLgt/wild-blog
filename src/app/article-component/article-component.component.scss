@@ -1,7 +1,7 @@
-$first-color: rgb(232, 122, 3);
-$light-color: rgb(252, 241, 240);
-$contrast-color: rgb(245, 205, 29);
-$third-color: rgb(114, 30, 174);
+$first-color: rgb(20, 57, 2);
+$light-color: rgb(178, 221, 203);
+$contrast-color: #fe85fa;
+$third-color: rgb(69, 214, 154);
 $white: rgb(255, 255, 255);
 .articles-container {
   display: flex;
@@ -11,6 +11,14 @@ $white: rgb(255, 255, 255);
   gap: 1em;
 }
 
+.heart {
+  color: $contrast-color;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.7em;
+  padding: 0.2em;
+}
 h2 {
   display: flex;
   flex-direction: row;
@@ -18,10 +26,11 @@ h2 {
   align-items: center;
   background-color: $first-color;
   color: $white;
-  padding: 1em;
+  padding: 0.8em;
   margin: 0;
-  border-bottom: 15px solid $contrast-color;
-  border-right: 7px solid $contrast-color;
+  font-size: 1.2em;
+  border-bottom: 10px solid $contrast-color;
+  border-right: 3px solid $contrast-color;
 
   button {
     border-bottom: 5px solid $contrast-color;
@@ -40,68 +49,71 @@ h2 {
 h3 {
   color: $first-color;
   font-size: 2em;
-  margin: 0;
+  margin: auto;
+  text-align: center;
 }
 
 .whole-article {
   font-family: quicksand;
-  width: 800px;
-}
-.article-details {
-  background-color: $light-color;
-  border-bottom: 10px solid $contrast-color;
-  border-right: 3px solid $contrast-color;
-}
-
-.hidden {
-  opacity: 0;
-  border: 0;
-  background-color: transparent;
-  height: 2px;
+  width: 500px;
 }
 
 .author {
   color: $first-color;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   width: 30%;
   border-radius: 0 0 25px;
   background-color: $white;
-  padding: 1em;
+
   margin: 0;
 }
 img {
-  height: 300px;
-  margin-top: 1em;
+  height: 150px;
 }
 
 .article-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1em 1em 1em;
-  gap: 1em;
+  padding: 1em;
   p {
     background-color: $white;
     padding: 1em;
     margin: 0;
   }
 }
+.likes-section {
+  border-bottom: $contrast-color 2px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  .liked-button {
+    color: $contrast-color;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.8em;
+  }
+}
 
 .comment-section {
-  padding-left: 1em;
+  border-top: 2px solid $contrast-color;
+  background-color: $white;
+  padding-bottom: 1em;
   h4,
   h5 {
     color: $first-color;
   }
   input {
-    border: $first-color solid 3px;
+    border: $first-color solid 2px;
     width: 50%;
     padding: 0.5em;
     border-radius: 0.5em;
   }
   p {
-    background-color: white;
+    background-color: $light-color;
     border-radius: 25px 25px 25px 0px;
     width: 50%;
     padding: 0.5em;

@@ -1,23 +1,41 @@
 <div class="articles-container">
-  <div class="whole-article" *ngFor="let art of article; let index = index">
+  <!-- loop pour les articles (pas trouvé comment loop sur l'id pour l'instant) -->
+  @for (art of article; track $index) {
+  <div class="whole-article">
     <h2>
+      <!--  condition : si un article a + de 150 likes la div apparait  -->
+      @if (art.likes > 150) {
+      <div class="heart">we ♥</div>
+      }
       {{ art.title }}
-      <button (click)="togglePublication(index)">
-        {{ art.isPublished ? "Hide" : "Show" }}
+      <!--  boutton pour afficher ou non l'article  -->
+      <button (click)="togglePublication(art.id)">
+        {{ art.isPublished ? "&#x25b2;" : "&#x25bc;" }}
       </button>
     </h2>
-    <div class="article-details" [class.hidden]="!art.isPublished">
+    <!--  attribute directive : changement de classe  en fonction de la valeur de isPublished  -->
+    <div [ngStyle]="getCard(art.isPublished)">
       <p class="author">by {{ art.author }}</p>
+      <h3>{{ art.description }}</h3>
       <div class="article-content">
         <div>
           <img [src]="art.image" alt="album cover" />
         </div>
         <div>
-          <h3>{{ art.description }}</h3>
           <p>{{ art.content }}</p>
         </div>
       </div>
       <div class="comment-section">
+        <div class="likes-section">
+          <!--  attribute directive : changement de classe au click (qui donne la veleur true à isLiked)  -->
+          Likes : {{ art.likes }}
+          <button
+            [ngClass]="{ 'liked-button': art.isLiked }"
+            (click)="addLike(art.id)"
+          >
+            ♥ +
+          </button>
+        </div>
         <h4>Share your thoughts !</h4>
         <input
           type="text"
@@ -29,4 +47,5 @@
       </div>
     </div>
   </div>
+  }
 </div>
