@@ -3,6 +3,8 @@ $light-color: rgb(178, 221, 203);
 $contrast-color: #fe85fa;
 $third-color: rgb(69, 214, 154);
 $white: rgb(255, 255, 255);
+
+// whole page
 .articles-container {
   display: flex;
   flex-direction: row;
@@ -11,6 +13,13 @@ $white: rgb(255, 255, 255);
   gap: 1em;
 }
 
+// whole card
+.whole-article {
+  font-family: quicksand;
+  width: 500px;
+}
+
+// title
 .heart {
   color: $contrast-color;
   background-color: white;
@@ -46,16 +55,12 @@ h2 {
   }
 }
 
+// card content
 h3 {
   color: $first-color;
   font-size: 2em;
   margin: auto;
   text-align: center;
-}
-
-.whole-article {
-  font-family: quicksand;
-  width: 500px;
 }
 
 .author {
@@ -81,6 +86,8 @@ img {
     margin: 0;
   }
 }
+
+// likes
 .likes-section {
   border-bottom: $contrast-color 2px solid;
   display: flex;
@@ -98,6 +105,7 @@ img {
   }
 }
 
+// comments
 .comment-section {
   border-top: 2px solid $contrast-color;
   background-color: $white;

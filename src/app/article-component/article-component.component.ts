@@ -80,13 +80,14 @@ export class ArticleComponentComponent {
     },
   ];
 
-  togglePublication(index: number): void {
-    this.article[index].isPublished = !this.article[index].isPublished;
-  }
-
+  // ajout d'un like au compteur & passe isLiked à true
   addLike(index: number): void {
     this.article[index].likes += 1;
     this.article[index].isLiked = true;
+  }
+  // passe la valeur de isPublished à sa valeur inverse: nous sert pour la méthode getCard à appliquer des styles différents
+  togglePublication(index: number): void {
+    this.article[index].isPublished = !this.article[index].isPublished;
   }
   // style à appliquer à la carte si elle est publiée ou non
   getCard(isPublished: boolean) {
