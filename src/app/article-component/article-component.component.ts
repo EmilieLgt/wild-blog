@@ -1,19 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
-interface Article {
-  id: number;
-  title: string;
-  author: string;
-  description: string;
-  content: string;
-  image: string;
-  isPublished: boolean;
-  comment: string;
-  likes: number;
-  isLiked: boolean;
-}
+import { Article } from '../models/Article';
+import { transition } from '@angular/animations';
 
 @Component({
   selector: 'app-article-component',
@@ -36,6 +25,7 @@ export class ArticleComponentComponent {
       comment: '',
       likes: 150,
       isLiked: false,
+      isCommented: false,
     },
     {
       id: 1,
@@ -50,6 +40,7 @@ export class ArticleComponentComponent {
       comment: '',
       likes: 180,
       isLiked: false,
+      isCommented: false,
     },
     {
       id: 2,
@@ -63,6 +54,7 @@ export class ArticleComponentComponent {
       comment: '',
       likes: 80,
       isLiked: false,
+      isCommented: false,
     },
     {
       id: 3,
@@ -77,9 +69,16 @@ export class ArticleComponentComponent {
       comment: '',
       likes: 120,
       isLiked: false,
+      isCommented: false,
     },
   ];
 
+  // sert à afficher la section commentaire si l'input est rempli
+  toggleComments(index: number): void {
+    if (this.article[index].comment.length > 0) {
+      this.article[index].isCommented = true;
+    }
+  }
   // ajout d'un like au compteur & passe isLiked à true
   addLike(index: number): void {
     this.article[index].likes += 1;
@@ -92,12 +91,10 @@ export class ArticleComponentComponent {
   // style à appliquer à la carte si elle est publiée ou non
   getCard(isPublished: boolean) {
     return {
-      'background-color': 'rgb(178, 221, 203)',
-      'border-bottom': '10px solid #fe85fa',
-      'border-right': '3px solid #fe85fa',
       'max-height': isPublished ? '1000px' : '0',
       opacity: isPublished ? '1' : '0',
       overflow: 'hidden',
+      transition: 'all 0.2s ease',
     };
   }
 }

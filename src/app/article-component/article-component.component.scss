@@ -16,19 +16,11 @@ $white: rgb(255, 255, 255);
 // whole card
 .whole-article {
   font-family: quicksand;
-  width: 500px;
+  width: 550px;
 }
 
 // title
-.heart {
-  color: $contrast-color;
-  background-color: white;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 0.7em;
-  padding: 0.2em;
-}
-h2 {
+.title-article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,9 +29,17 @@ h2 {
   color: $white;
   padding: 0.8em;
   margin: 0;
-  font-size: 1.2em;
   border-bottom: 10px solid $contrast-color;
   border-right: 3px solid $contrast-color;
+
+  .heart {
+    color: $first-color;
+    background-color: $contrast-color;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 0.2em;
+  }
 
   button {
     border-bottom: 5px solid $contrast-color;
@@ -47,6 +47,7 @@ h2 {
     border-left: none;
     border-right: 2px solid $contrast-color;
     border-radius: 25px;
+    width: 10%;
     padding: 0.8em;
     background-color: $third-color;
     font-family: quicksand;
@@ -56,34 +57,37 @@ h2 {
 }
 
 // card content
-h3 {
-  color: $first-color;
-  font-size: 2em;
-  margin: auto;
-  text-align: center;
-}
-
-.author {
-  color: $first-color;
-  padding: 0.5em;
-  width: 30%;
-  border-radius: 0 0 25px;
-  background-color: $white;
-
-  margin: 0;
-}
-img {
-  height: 150px;
-}
-
-.article-content {
-  display: flex;
-  flex-direction: row;
-  padding: 1em;
-  p {
+.article-text {
+  background-color: $light-color;
+  border-bottom: 10px solid $contrast-color;
+  border-right: 3px solid $contrast-color;
+  h3 {
+    color: $first-color;
+    font-size: 2em;
+    margin: auto;
+    text-align: center;
+  }
+  .author {
+    color: $first-color;
+    padding: 0.5em;
+    width: 30%;
+    border-radius: 0 0 25px;
     background-color: $white;
-    padding: 1em;
     margin: 0;
+  }
+  .article-content {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    p {
+      background-color: $white;
+      padding: 1em;
+      margin: 0;
+    }
+  }
+
+  img {
+    height: 150px;
   }
 }
 
