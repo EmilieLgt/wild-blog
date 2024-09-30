@@ -77,6 +77,8 @@ export class ArticleComponentComponent {
   toggleComments(index: number): void {
     if (this.article[index].comment.length > 0) {
       this.article[index].isCommented = true;
+    } else if (this.article[index].comment.length === 0) {
+      this.article[index].isCommented = false;
     }
   }
   // ajout d'un like au compteur & passe isLiked à true

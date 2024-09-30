@@ -49,9 +49,13 @@
         <!--condition pour ne faire apparaitre les commentaire que si l'utilisateur tape dans l'input-->
         @if (art.isCommented) {
         <p>{{ art.comment }}</p>
+        } @else {
+        <p class="no-comment">Be the firt to comment !</p>
         }
       </div>
     </div>
   </div>
   }
 </div>
+
+<!-- à finir pour le challengae 4 : @empty après la boucle for pour mettre un message si aucun résultat  -->
