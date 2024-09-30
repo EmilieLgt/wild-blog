@@ -1,0 +1,153 @@
+$first-color: rgb(20, 57, 2);
+$light-color: rgb(218, 244, 233);
+$contrast-color: #4f027b;
+$third-color: rgb(69, 214, 154);
+$white: rgb(255, 255, 255);
+
+// whole card
+.whole-article {
+  font-family: quicksand;
+  width: 500px;
+}
+
+// title
+.title-article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $first-color;
+  color: $white;
+  padding: 0.8em;
+  margin: 0;
+  border-bottom: 1px solid $contrast-color;
+  border-right: 3px solid $contrast-color;
+
+  .heart {
+    color: $first-color;
+    background-color: $light-color;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 0.2em;
+  }
+
+  button {
+    border-bottom: 5px solid $contrast-color;
+    border-top: none;
+    border-left: none;
+    border-right: 2px solid $contrast-color;
+    border-radius: 25px;
+    width: 10%;
+    padding: 0.8em;
+    background-color: $third-color;
+    font-family: quicksand;
+    font-weight: bold;
+    color: $white;
+  }
+}
+
+// card content
+.article-text {
+  background-color: $light-color;
+  border: 3px solid $contrast-color;
+  h3 {
+    color: $contrast-color;
+    font-size: 2em;
+    margin: auto;
+    text-align: center;
+  }
+  .author {
+    color: $first-color;
+    padding: 0.5em;
+    width: 30%;
+    border-radius: 0 0 25px;
+    background-color: $white;
+    margin: 0;
+  }
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    gap: 1em;
+    .img-desc {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      background-color: $white;
+      padding: 1em;
+      margin: 0;
+    }
+  }
+
+  img {
+    height: 200px;
+  }
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  background-color: $first-color;
+  color: white;
+  padding: 0.5em;
+  border-radius: 15px;
+}
+a:hover {
+  cursor: pointer;
+  background-color: $contrast-color;
+}
+// likes
+.likes-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  background-color: $light-color;
+  padding-left: 1em;
+
+  .liked-button {
+    color: $contrast-color;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.8em;
+  }
+}
+
+// comments
+.comment-section {
+  border-top: 2px solid $contrast-color;
+  background-color: $white;
+  padding-bottom: 1em;
+
+  h4,
+  h5 {
+    color: $first-color;
+    padding-left: 1em;
+  }
+  input {
+    border: $first-color solid 2px;
+    width: 50%;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin-left: 1em;
+  }
+  p {
+    background-color: $light-color;
+    border-radius: 25px 25px 25px 0px;
+    width: 50%;
+    padding: 0.5em;
+    margin-left: 1em;
+  }
+  .no-comment {
+    background-color: transparent;
+  }
+}

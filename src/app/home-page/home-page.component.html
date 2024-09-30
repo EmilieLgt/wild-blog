@@ -1,65 +1,8 @@
 <h2>All articles</h2>
 <div class="articles-container">
-  <!-- loop pour les articles (pas trouvé comment loop sur l'id pour l'instant) -->
-  @for (art of article; track $index) {
-  <div class="whole-article">
-    <div class="title-article">
-      <!--  condition : si un article a + de 150 likes la div apparait  -->
-      @if (art.likes > 150) {
-      <div class="heart">we ♥</div>
-      }
-      <h2>
-        {{ art.title }}
-      </h2>
-      <!--  boutton pour afficher ou non l'article  -->
-      <button (click)="togglePublication(art.id)">
-        {{ art.isPublished ? "▲" : "▼" }}
-      </button>
-    </div>
-    <!--  attribute directive : changement de classe  en fonction de la valeur de isPublished (fait apparaitre ou disparaitre contenu de l'article) -->
-    <div class="article-text" [ngStyle]="getCard(art.isPublished)">
-      <p class="author">by {{ art.author }}</p>
-      <h3>{{ art.description }}</h3>
-      <div class="article-content">
-        <div>
-          <img [src]="art.image" alt="album cover" />
-        </div>
-        <div>
-          <p>{{ art.content }}</p>
-        </div>
-      </div>
+  @for(article of articles ; track article.id) {
 
-      <div class="comment-section">
-        <!--lien vers la page de l'article spécifique-->
-        <a [routerLink]="['/article', art.id]">Show more</a>
-        <div class="likes-section">
-          <!--  attribute directive : changement de classe au click (qui donne la valeur true à isLiked)  -->
-          Likes : {{ art.likes }}
-          <button
-            [ngClass]="{ 'liked-button': art.isLiked }"
-            (click)="addLike(art.id)"
-          >
-            ♥ +
-          </button>
-        </div>
-        <h4>Share your thoughts !</h4>
-        <input
-          type="text"
-          [(ngModel)]="art.comment"
-          placeholder="Type your comment here !"
-          (input)="toggleComments(art.id)"
-        />
-        <h5>Comments</h5>
-        <!--condition pour ne faire apparaitre les commentaire que si l'utilisateur tape dans l'input-->
-        @if (art.isCommented) {
-        <p>{{ art.comment }}</p>
-        } @else {
-        <p class="no-comment">Be the firt to comment !</p>
-        }
-      </div>
-    </div>
-  </div>
+  <app-article-component [article]="article"></app-article-component>
+
   }
 </div>
-
-<!-- à finir pour le challengae 4 : @empty après la boucle for pour mettre un message si aucun résultat  -->

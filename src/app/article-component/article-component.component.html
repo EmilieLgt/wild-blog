@@ -1,1 +1,64 @@
-<h2>{{ articleId }}</h2>
+<div class="articles-container">
+  <div class="whole-article">
+    <div class="title-article">
+      <!--  condition : si un article a + de 150 likes la div apparait  -->
+      @if (article.likes > 150) {
+      <div class="heart">we ♥</div>
+      }
+      <h2>
+        {{ article.title }}
+      </h2>
+      <!--  boutton pour afficher ou non l'article  -->
+      <button (click)="togglePublication()">
+        {{ article.isPublished ? "▲" : "▼" }}
+      </button>
+    </div>
+
+    <!--  attribute directive : changement de classe  en fonction de la valeur de isPublished (fait apparaitre ou disparaitre contenu de l'article) -->
+    <div class="article-text" [ngStyle]="getCard(article.isPublished)">
+      <p class="author">by {{ article.author }}</p>
+
+      <h3>{{ article.description }}</h3>
+
+      <div class="article-content">
+        <div class="img-desc">
+          <img [src]="article.image" alt="album cover" />
+
+          <p>{{ article.content }}</p>
+        </div>
+
+        <a [routerLink]="['/article', article.id]">Show more</a>
+      </div>
+
+      <div class="comment-section">
+        <!--lien vers la page de l'article spécifique-->
+        <div class="likes-section">
+          <!--  attribute directive : changement de classe au click (qui donne la valeur true à isLiked)  -->
+          Likes : {{ article.likes }}
+          <button
+            [ngClass]="{ 'liked-button': article.isLiked }"
+            (click)="addLike()"
+          >
+            ♥ +
+          </button>
+        </div>
+        <h4>Share your thoughts !</h4>
+        <input
+          type="text"
+          [(ngModel)]="article.comment"
+          placeholder="Type your comment here !"
+          (input)="toggleComments()"
+        />
+        <h5>Comments</h5>
+        <!--condition pour ne faire apparaitre les commentaire que si l'utilisateur tape dans l'input-->
+        @if (article.isCommented) {
+        <p>{{ article.comment }}</p>
+        } @else {
+        <p class="no-comment">Be the firt to comment !</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- à finir pour le challengae 4 : @empty après la boucle for pour mettre un message si aucun résultat  -->
