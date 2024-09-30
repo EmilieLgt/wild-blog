@@ -1,0 +1,91 @@
+<h2>Contact</h2>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="lastname">Last Name</label>
+    <input
+      id="lastname"
+      name="lastname"
+      type="text"
+      [(ngModel)]="newContact.lastname"
+      #lastname="ngModel"
+      required
+      minlength="2"
+      maxlength="15"
+    />
+    @if (lastname.errors && contactForm.submitted) {
+    <div>
+      @if (lastname.errors['required']) {
+      <span>Your lastname is required</span>
+      } @if (lastname.errors['minlength']) {
+      <span>Last name must at least 2 characters long.</span>
+      } @if (lastname.errors['maxlength']) {
+      <span>Lastname must be not longer than 15 characters</span>
+      }
+    </div>
+    }
+  </fieldset>
+
+  <fieldset>
+    <label for="firstname">First name</label>
+    <input
+      id="firstname"
+      name="firstname"
+      type="text"
+      [(ngModel)]="newContact.firstname"
+      #firstname="ngModel"
+      required
+      minlength="2"
+      maxlength="15"
+    />
+    @if (firstname.errors && contactForm.submitted) {
+    <div>
+      @if (firstname.errors['required']) {
+      <span>Your first name is required</span>
+      } @if (firstname.errors['minlength']) {
+      <span>Firstname must be at least 2 characters long.</span>
+      } @if (firstname.errors['maxlength']) {
+      <span>Firstname must be not longer than 15 characters</span>
+      }
+    </div>
+    }
+  </fieldset>
+
+  <fieldset>
+    <label for="email">Email</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      [(ngModel)]="newContact.email"
+      #email="ngModel"
+      required
+      email
+    />
+    @if (email.errors && contactForm.submitted) {
+    <div>
+      @if (email.errors['required']) {
+      <span>Your e-mail is required</span>
+      } @if (email.errors['email']) {
+      <span>Your e-mail must be valid.</span>
+      }
+    </div>
+    }
+  </fieldset>
+
+  <button type="reset">Restaurer</button>
+  <button type="submit">Envoyer</button>
+</form>
+
+<!--
+firstname de type text qui doit être validé avec required, minlength à 2 et maxlength à 15
+lastname de type text qui doit être validé avec required, minlength à 2 et maxlength à 15
+email doit être validé avec required et email
+Le message d'erreur pour la validation required doit être : "Le * est requis"
+Avec * = le nom du champ.
+Par exemple : Le prénom est requis
+Le message pour la validation de l'email doit être : L'email est invalide
+Le message pour la validation de maxlength doit être : Le * ne doit pas dépasser 15 caractères.
+Le message pour la validation de minlength doit être : Le * doit comporter au moins 2 caractères.
+Les messages d'erreurs doivent être affichés uniquement après l'envoi du formulaire 😈
+-->

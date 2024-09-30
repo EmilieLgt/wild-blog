@@ -1,0 +1,68 @@
+<h2>Sign up</h2>
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="username">Username </label>
+    <input id="username" formControlName="username" minlength="3" />
+
+    <!--le .touched sert à savoir si l'input a été rempli ou non (permet de ne pas afficher les messages d'erreur si rien n'est encore renseigné)-->
+    @if(signUpForm.get('username')?.invalid &&
+    signUpForm.get('username')?.touched ) {
+    <div>
+      @if (signUpForm.get('username')?.errors?.['required']) {
+      <span>Username is required</span>
+      } @if (signUpForm.get('username')?.errors?.['minlength']) {
+      <span>Username must be at least 3 characters long.</span>
+      }
+    </div>
+    }
+  </fieldset>
+
+  <fieldset>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" required email />
+    @if(signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched ) {
+    <div>
+      @if (signUpForm.get('email')?.errors?.['required']) {
+      <span>email is required</span>
+      } @if (signUpForm.get('email')?.errors?.['email']) {
+      <span>You must enter a valid Email.</span>
+      }
+    </div>
+    }
+  </fieldset>
+  <!--ne pas oublier le formGroupName ici-->
+  <div formGroupName="passwords">
+    <fieldset>
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" required />
+      @if (signUpForm.get('passwords.password')?.invalid &&
+      signUpForm.get('passwords.password')?.touched) {
+      <div>
+        @if (signUpForm.get('passwords.password')?.errors?.['required']) {
+        <span>Password is required</span>
+        } @if (signUpForm.get('passwords.password')?.errors?.['securePassword'])
+        {
+        <span>
+          Password must contain at least 12 characters, with a uppercase,
+          lowercase, a number and a special character.
+        </span>
+        }
+      </div>
+      }
+    </fieldset>
+    <fieldset>
+      <label for="confirmedPassword">Confirm your password</label>
+      <input
+        id="confirmedPassword"
+        formControlName="confirmedPassword"
+        required
+      />
+    </fieldset>
+    <!--vérification de la correspondance des mdp-->
+    @if (signUpForm.get('passwords')?.errors?.['passwordsMismatch'] &&
+    signUpForm.get('passwords.confirmedPassword')?.touched) {
+    <span>Passwords aren't matching.</span>
+    }
+  </div>
+  <button type="submit">Sign up</button>
+</form>
