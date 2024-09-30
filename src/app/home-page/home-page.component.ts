@@ -1,19 +1,20 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Article } from '../models/Article';
+import { ArticleComponentComponent } from '../article-component/article-component.component';
 
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-article-component',
+  selector: 'home-page-component',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterModule],
+  imports: [FormsModule, CommonModule, RouterModule, ArticleComponentComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
-  article: Article[] = [
+  articles: Article[] = [
     {
       id: 0,
       title: 'Album Review | Sabrina Carpenter',
@@ -73,33 +74,4 @@ export class HomePageComponent {
       isCommented: false,
     },
   ];
-
-  //
-
-  // sert à afficher la section commentaire si l'input est rempli
-  toggleComments(index: number): void {
-    if (this.article[index].comment.length > 0) {
-      this.article[index].isCommented = true;
-    } else if (this.article[index].comment.length === 0) {
-      this.article[index].isCommented = false;
-    }
-  }
-  // ajout d'un like au compteur & passe isLiked à true
-  addLike(index: number): void {
-    this.article[index].likes += 1;
-    this.article[index].isLiked = true;
-  }
-  // passe la valeur de isPublished à sa valeur inverse: nous sert pour la méthode getCard à appliquer des styles différents
-  togglePublication(index: number): void {
-    this.article[index].isPublished = !this.article[index].isPublished;
-  }
-  // style à appliquer à la carte si elle est publiée ou non
-  getCard(isPublished: boolean) {
-    return {
-      'max-height': isPublished ? '1000px' : '0',
-      opacity: isPublished ? '1' : '0',
-      overflow: 'hidden',
-      transition: 'all 0.2s ease',
-    };
-  }
 }
