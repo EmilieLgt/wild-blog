@@ -2,9 +2,13 @@
   <div class="content">
     <div class="left-side">
       <h1>Hello, {{ title }}</h1>
+      <nav>
+        <a [routerLink]="['/']">Home</a>
+        <a [routerLink]="['/abcd']"> Nowhere</a>
+      </nav>
     </div>
 
-    <app-article-component> </app-article-component>
+    <router-outlet></router-outlet>
   </div>
 </main>
 <router-outlet />

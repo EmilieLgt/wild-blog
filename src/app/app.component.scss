@@ -1,4 +1,26 @@
+$first-color: rgb(20, 57, 2);
+$light-color: rgb(178, 221, 203);
+$contrast-color: #fe85fa;
+$third-color: rgb(69, 214, 154);
+$white: rgb(255, 255, 255);
+
 h1 {
   font-family: "Quicksand";
   text-align: center;
+}
+
+nav {
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    background-color: $first-color;
+    color: $white;
+    padding: 1em;
+    border-radius: 25px;
+  }
 }
