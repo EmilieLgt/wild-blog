@@ -74,6 +74,7 @@ export class HomePageComponent {
     },
   ];
 
+  // on reprend ici les informations de l'enfant pour pouvoir afficher le titre d'un article liké
   articleLikedtoDisplay!: string;
   handleArticleToDisplay(articleTitle: string) {
     console.log('hi');
