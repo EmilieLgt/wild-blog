@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Article } from '../models/Article';
 import { ArticleComponentComponent } from '../article-component/article-component.component';
-
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -74,4 +73,10 @@ export class HomePageComponent {
       isCommented: false,
     },
   ];
+
+  articleLikedtoDisplay!: string;
+  handleArticleToDisplay(articleTitle: string) {
+    console.log('hi');
+    this.articleLikedtoDisplay = articleTitle;
+  }
 }
