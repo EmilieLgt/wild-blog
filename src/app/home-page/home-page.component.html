@@ -1,8 +1,15 @@
 <h2>All articles</h2>
+
+@if(articleLikedtoDisplay) {
+<p>L'article {{ articleLikedtoDisplay }} vient d'être liké</p>
+}
+
 <div class="articles-container">
   @for(article of articles ; track article.id) {
-
-  <app-article-component [article]="article"></app-article-component>
-
+  <app-article-component
+    [article]="article"
+    (articleLiked)="handleArticleToDisplay($event)"
+  >
+  </app-article-component>
   }
 </div>
