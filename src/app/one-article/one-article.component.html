@@ -1,0 +1,6 @@
+<!-- je n'ai pas réussi à le faire avec @if -->
+<ng-container *ngIf="article$ | async as article">
+  <h2>{{ article.title }}</h2>
+  <img [src]="article.image" />
+  <p>{{ article.content }}</p>
+</ng-container>
