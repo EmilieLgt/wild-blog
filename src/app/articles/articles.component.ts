@@ -10,10 +10,10 @@ import { Article } from '../models/Article';
   selector: 'app-article-component',
   standalone: true,
   imports: [FormsModule, CommonModule, RouterModule],
-  templateUrl: './article-component.component.html',
-  styleUrl: './article-component.component.scss',
+  templateUrl: './articles.component.html',
+  styleUrl: './articles.component.scss',
 })
-export class ArticleComponentComponent {
+export class ArticleComponent {
   // reçoit l'article du parent
   @Input() article!: Article;
 
@@ -57,6 +57,4 @@ export class ArticleComponentComponent {
       this.articleId = Number(params.get('id'));
     });
   }
-
-  //
 }
