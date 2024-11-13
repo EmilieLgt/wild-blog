@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Route, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { Article } from '../models/Article';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-one-article',
@@ -15,19 +15,17 @@ import { CommonModule } from '@angular/common';
 })
 export class OneArticleComponent {
   article$!: Observable<Article>;
-  http = inject(HttpClient);
+  private apiService = inject(ApiService);
+  private route = inject(ActivatedRoute);
 
   articleId!: number;
 
-  route = inject(ActivatedRoute);
-
   ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      console.log('hii');
-      this.articleId = Number(params.get('id'));
-      this.article$ = this.http.get<Article>(
-        `http://localhost:3000/articles/${this.articleId}`
-      );
-    });
+    const articleId = Number(this.route.snapshot.paramMap.get('id'));
+
+    // Appeler ApiService pour obtenir l'article
+    if (articleId) {
+      this.article$ = this.apiService.getOneArticleById(articleId);
+    }
   }
 }
