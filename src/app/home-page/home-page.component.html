@@ -5,7 +5,7 @@
 }
 
 <div class="articles-container">
-  @for(article of articles$ | async ; track article.id) {
+  @for(article of articles ; track article.id) {
   <app-article-component
     [article]="article"
     (articleLiked)="handleArticleToDisplay($event)"
