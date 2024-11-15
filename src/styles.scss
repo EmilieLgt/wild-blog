@@ -8,6 +8,9 @@ $white: rgb(255, 255, 255);
 button:hover {
   cursor: pointer;
 }
+a:hover {
+  cursor: pointer;
+}
 
 * {
   font-family: quicksand;
@@ -15,4 +18,8 @@ button:hover {
 
 h2 {
   text-align: center;
+}
+
+body {
+  background-color: hsl(304, 33%, 91%);
 }

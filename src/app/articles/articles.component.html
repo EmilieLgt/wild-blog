@@ -3,10 +3,10 @@
     <div class="title-article">
       <!--  condition : si un article a + de 150 likes la div apparait  -->
       @if (article.likes > 150) {
-      <div class="heart">we ♥</div>
+      <div class="heart">you ♥</div>
       }
       <h2>
-        {{ article.title }}
+        {{ article.description }}
       </h2>
       <!--  boutton pour afficher ou non l'article  -->
       <button (click)="togglePublication()">
@@ -18,13 +18,11 @@
     <div class="article-text" [ngStyle]="getCard(article.isPublished)">
       <p class="author">by {{ article.author }}</p>
 
-      <h3>{{ article.description }}</h3>
+      <h3>{{ article.title }}</h3>
 
       <div class="article-content">
         <div class="img-desc">
           <img [src]="article.image" alt="album cover" />
-
-          <p>{{ article.content }}</p>
         </div>
 
         <a [routerLink]="['/article', article.id]">Show more</a>

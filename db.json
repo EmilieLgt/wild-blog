@@ -2,7 +2,7 @@
   "articles": [
     {
       "id": 0,
-      "title": "Album Review | Sabrina Carpenter",
+      "title": "Sabrina Carpenter",
       "author": "Emilie",
       "description": "Short n' Sweet",
       "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -15,7 +15,7 @@
     },
     {
       "id": 1,
-      "title": "Album Review | Chappell Roan",
+      "title": "Chappell Roan",
       "author": "Emilie",
       "description": "The Rise and Fall of a Midwest Princess",
       "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "title": "Album Review | Charlie XCX",
+      "title": "Charlie XCX",
       "author": "Emilie",
       "description": "Brat",
       "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -41,7 +41,7 @@
     },
     {
       "id": 3,
-      "title": "Album Review | Billie Eilish",
+      "title": "Billie Eilish",
       "author": "Emilie",
       "description": "Hit Me Hard and Soft",
       "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
@@ -49,6 +49,58 @@
       "isPublished": true,
       "comment": "",
       "likes": 120,
+      "isLiked": false,
+      "isCommented": false
+    },
+    {
+      "id": 4,
+      "title": "Dua Lipa",
+      "author": "Emilie",
+      "description": "Radical Optimism",
+      "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+      "image": "https://static.fnac-static.com/multimedia/Images/FR/NR/07/cb/0b/17550087/1541-2/tsp20240314112108/Radical-Optimism-Edition-Limitee.jpg",
+      "isPublished": true,
+      "comment": "",
+      "likes": 70,
+      "isLiked": false,
+      "isCommented": false
+    },
+    {
+      "id": 5,
+      "title": "Zayn",
+      "author": "Emilie",
+      "description": "Room Under the Stairs",
+      "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+      "image": "https://m.media-amazon.com/images/I/81ji-Y0ATGL._SY200_QL15_.jpg",
+      "isPublished": true,
+      "comment": "",
+      "likes": 70,
+      "isLiked": false,
+      "isCommented": false
+    },
+    {
+      "id": 6,
+      "title": "Beyoncé",
+      "author": "Emilie",
+      "description": "Cowboy Carter",
+      "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+      "image": "https://static.fnac-static.com/multimedia/Images/FR/NR/5a/75/13/18052442/1540-1/tsp20240531105118/Cowboy-Carter-Official.jpg",
+      "isPublished": true,
+      "comment": "",
+      "likes": 70,
+      "isLiked": false,
+      "isCommented": false
+    },
+    {
+      "id": 7,
+      "title": "Taylor Swift",
+      "author": "Emilie",
+      "description": "TTPD",
+      "content": "Slayin, stunnin, yesssss. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
+      "image": "https://taypedia.com/wp-content/uploads/2024/05/ttpd4.jpeg",
+      "isPublished": true,
+      "comment": "",
+      "likes": 70,
       "isLiked": false,
       "isCommented": false
     }

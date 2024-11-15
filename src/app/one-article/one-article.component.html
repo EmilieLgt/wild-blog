@@ -1,6 +1,12 @@
 <!-- je n'ai pas réussi à le faire avec @if -->
-<ng-container *ngIf="article$ | async as article">
-  <h2>{{ article.title }}</h2>
-  <img [src]="article.image" />
-  <p>{{ article.content }}</p>
+<ng-container *ngIf="article$ | async as article" class="one-article-container">
+  <h2>{{ article.description }}</h2>
+  <div class="one-article-content">
+    <img [src]="article.image" />
+    <div>
+      <h3>{{ article.title }}</h3>
+
+      <p>{{ article.content }}</p>
+    </div>
+  </div>
 </ng-container>
