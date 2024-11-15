@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Article } from '../models/Article';
-import { ArticleComponent } from '../articles/articles.component';
-import { OneArticleComponent } from '../one-article/one-article.component';
-import { ApiService } from '../services/api.service';
+import { Article } from '../../models/Article';
+import { ArticleComponent } from '../articles-component/articles.component';
+import { OneArticleComponent } from '../one-article-page/one-article.component';
+import { ApiService } from '../../services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ParamMap } from '@angular/router';
-import { Article } from '../models/Article';
+import { Article } from '../../models/Article';
 
 @Component({
   selector: 'app-article-component',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { ArticleComponent } from './articles/articles.component';
+import { ArticleComponent } from './articles-component/articles.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
