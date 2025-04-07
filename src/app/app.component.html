@@ -4,9 +4,18 @@
       <h1>Hello, {{ title }}</h1>
       <nav>
         <a [routerLink]="['/']">Home</a>
-        <a [routerLink]="['/abcd']"> Nowhere</a>
+        <a [routerLink]="['/abcd']">Nowhere</a>
         <a [routerLink]="['/contact']">Contact</a>
+
+        @if(!isLogged) {
         <a [routerLink]="['/sign-up']">Sign-up</a>
+        <a [routerLink]="['/login']">Login</a>
+        } @if(isLogged) {
+          <a href="#" (click)="logout()">Logout</a>
+          <a [routerLink]="['/profile']">Profile</a>
+        @if(isAdmin) {
+        <a [routerLink]="['/admin']">Admin</a>
+        } }
       </nav>
     </div>
 
