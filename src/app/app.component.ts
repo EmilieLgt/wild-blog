@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ArticleComponent } from './articles-component/articles.component';
 import { CommonModule } from '@angular/common';
 import { AuthServiceService } from '../services/auth-service.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,17 @@ export class AppComponent {
   private role!: string | null;
   private authService = inject(AuthServiceService);
   private router = inject(Router);
+  private apiService = inject(ApiService);
 
   public isAdmin: boolean = false;
   public isLogged: boolean = false;
+  public articlesList: any;
 
   ngOnInit() {
+    this.apiService.getArticlesFromDB().subscribe((articles) => {
+      this.articlesList = articles;
+    });
+    console.log('articles list', this.articlesList);
     console.log('hello');
     this.role = this.authService.getUserRole();
     if (this.role == 'admin') {
